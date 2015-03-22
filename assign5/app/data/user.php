@@ -6,8 +6,6 @@
 	$contents = (string)file_get_contents($file);
 	$data = explode(',',$contents);
 	echo " ";
-	var_dump($user->password);
-	var_dump($data[1]);
 	if($data[0]==$user->username && $data[1]==$user->password) {
          	session_start();
 		$_SESSION['user']=uniqid('ang_');
