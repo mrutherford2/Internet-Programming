@@ -1,25 +1,32 @@
 'use strict';
 
 app.controller('homeCtrl', ['$scope','loginService', '$http', 'sessionService', function($scope,loginService, $http, sessionService) {
-	var funds = 1000.00;
+	var funds = 10000.00;
 	$scope.accountBalance = funds;
 	$scope.username = sessionService.get('username');
+	$scope.totalOwnedStocks = 0;
+	$scope.sortOrder = 'symbol';
+
 	$scope.buy=function(stock){
 		if($scope.accountBalance > stock.price) {
 			stock.owned +=1;
 			stock.quantity -=1;
+			$scope.totalStocks -=1;
 			$scope.accountBalance -= parseFloat(stock.price);
-			$('#nofundsalert').hide(); 
+			$scope.totalOwnedStocks +=1;
 		}
 		else {
-			$('#nofundsalert').show();
+			alert('slide');
+			$('#nofundsalert').slideToggle();
 		}
 	}
 
 	$scope.sell=function(stock){
 		stock.quantity +=1;
 		stock.owned -=1;
+		$scope.totalStocks +=1;
 		$scope.accountBalance += parseFloat(stock.price);
+		$scope.totalOwnedStocks -=1;
 	}
 
 	function generateStockUrlFromList() {
@@ -31,7 +38,7 @@ app.controller('homeCtrl', ['$scope','loginService', '$http', 'sessionService', 
 	}
 
 	$scope.myStocks = []; 
-
+	$scope.totalStocks = 0;
 	$http.get(generateStockUrlFromList())
 	.success(function(data, status, headers, config) {
 		data.query.results.quote.forEach(function(val, i) {
@@ -39,9 +46,10 @@ app.controller('homeCtrl', ['$scope','loginService', '$http', 'sessionService', 
 				name: val.Name,
 				symbol: val.Symbol,
 				price: parseFloat(val.LastTradePriceOnly).toFixed(2),
-				quantity: 10,
+				quantity: 50,
 				owned: 0
 			}
+			$scope.totalStocks += $scope.myStocks[i].quantity;
 		});
 	})
 	.error(function(data, status, headers, config) {
@@ -63,6 +71,18 @@ function getStockList()  {
 		'FB',
 		'FISV',
 		'FOX',
-		'GOOG'
+		'GOOG',
+		'MSFT',
+		'CSCO',
+		'SIRI',
+		'EBAY',
+		'XIV',
+		'AMAT',
+		'CSCO',
+		'WBA',
+		'INTC',
+		'CMCSA',
+		'GILD',
+		'QCOM',
 	];
 }
