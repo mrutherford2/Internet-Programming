@@ -275,6 +275,10 @@ color: #333;
 display: none; 
 }
 
+.stocksContainer {
+	overflow-y: scroll;
+	max-height: 228px;
+}
 
 
 
