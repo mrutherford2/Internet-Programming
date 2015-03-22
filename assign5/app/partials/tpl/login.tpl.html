@@ -1,0 +1,25 @@
+<div class="assignment4-content-container">
+    <div class="page-header">
+	<h1>Assignment 5 <small class="caption-text">Working with PHP</small></h1>
+    </div>
+	<form role="form" class="form-horizontal" name="loginForm">
+        <div class="form-group">
+          <label for="username" class="col-sm-2 control-label">Username</label>
+          <div class="col-sm-7">
+            <input ng-model="user.username" type="text" class="form-control" id="username" placeholder="Username" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-7">
+            <input ng-model="user.password" type="password" class="form-control" id="password" placeholder="Password" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" ng-click="login(user)">Login</button>
+            <p>{{msgtext}}</p>
+          </div>
+        </div>
+      </form> 
+</div>

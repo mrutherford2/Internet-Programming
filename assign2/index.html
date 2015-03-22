@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="../assign1/style.css" rel="stylesheet">
+		<script src="app.js" type="text/javascript"></script>
+		<title>Assignment 2</title>
+	</head>
+<body id="assignment2body">
+<div id="page-wrapper">
+  <div class="header-container">
+	<h1>Assignment 2</h1>
+	<a href="../index.html">Home</a> <a href="../Images/Flowchart.png" target="_blank">Flowchart</a> 	
+  </div>	
+  <div class="assignment2-content-container">
+	<h1>Application for Employment</h1>
+	<!-- Personal Info Section-->
+	<fieldset>
+	<legend>Personal Information</legend>
+	<div class="personalinfo-section">
+	<label for="firstname">First Name</label><br>
+	<input id="firstname" type="text" name="firstname">
+	<br>
+	<label for="lastname">Last Name</label><br>
+	<input id="lastname" type="text" name="lastname">
+	</div>
+	<div class="personalinfo-section">
+	<label>Gender</label><br>
+	<input id="gendermale" type="radio" name="sex" value="male" checked="true">Male<br>
+	<input id="genderfemale" type="radio" name="sex" value="female">Female
+	</div>
+	<div class="personalinfo-section">
+	<label>Street Address</label><br>
+	<input id="streetaddress" type="text" name="streetaddress">
+	<br>
+	<label>City</label><br>
+	<input id="city" type="text" name="city">
+	</div>
+	<div class="personalinfo-section">
+	<label>State</label><br>
+	<input id="state" type="text" name="state">
+	<br>
+	<label>Zip</label><br>
+	<input id="zip" type="text" name="zip">
+	</div>
+	</fieldset>
+	<!-- End Personal Info Section-->
+	<!-- Education Info Section-->
+	<fieldset>
+	<legend>Education</legend>
+	<div class="educationinfo-section">
+	<label>Highest Level of Education Obtained</label><br>
+	<select id="educationlevel">
+		<option value="default"></option>
+		<option value="highschool">Highschool</option>
+		<option value="associates">Associates</option>
+		<option value="batchelors">Batchelors</option>
+		<option value="masters">Masters</option>
+		<option value="phd">PHD</option>
+	</select>
+	</div>
+	<div class="educationinfo-section">
+	<label>Certifications (list all)</label><br>
+	<textarea id="certifications"></textarea>
+	</div>
+	</fieldset>
+	<!-- End Education Section-->
+	<!-- Availability Info Section-->
+	<fieldset>
+	<legend>Availability</legend>
+	<div class="availabilityinfo-section">
+	<label>Employment Desired</label><br>
+	<select id="typeofemployment">
+		<option value="default"></option>
+		<option value="parttime">Part Time</option>
+		<option value="fulltime">Full Time</option>
+		<option value="fullorparttime">Full or Part Time</option>
+	</select>
+	</div>
+	<div class="availabilityinfo-section">
+	<label>Days Available</label><br>
+	<div class="checkbox-section">
+		<div class="checkbox-column">
+		<label for="monday">Mon</label>
+			<input class="checkbox" type="checkbox" name="monday" value="monday">
+		</div>
+		<div class="checkbox-column">
+			<label for="thursday">Thur</label>
+			<input class="checkbox" type="checkbox" name="thursday" value="thursday">
+		</div>
+		<div class="checkbox-column">
+			<label for="sunday">Sun</label>
+			<input class="checkbox" type="checkbox" name="sunday" value="sunday">
+		</div>
+	</div>
+	<div class="checkbox-section">
+		<div class="checkbox-column">
+			<label for="tuesday">Tue</label>
+			<input class="checkbox" type="checkbox" name="tuesday" value="tuesday">
+		</div>
+		<div class="checkbox-column">
+			<label for="friday">Fri</label>
+			<input class="checkbox" type="checkbox" name="friday" value="friday">
+		</div>
+	</div>
+	<div class="checkbox-section">
+		<div class="checkbox-column">
+			<label for="wednesday">Wed</label>
+			<input class="checkbox" type="checkbox" name="wednesday" value="wednesday">
+		</div>
+		<div class="checkbox-column">
+			<label for="saturday">Sat</label>
+			<input class="checkbox" type="checkbox" name="saturday" value="saturday">
+		</div>
+	</div>
+	</div>
+	<div class="availabilityinfo-section">
+	<label>Date Available (Ex: 1/1/2015)</label><br>
+	<input id="dateavailable" type="text" name="dateavailable">
+	</div>
+	</fieldset>
+	<div class="submit-section">
+	<button id="btnSubmit" onclick="submit()">Submit</button>
+	<button id="btnReset" onclick="reset()">Reset</button>
+	</div>
+	<!-- End Availability Info Section-->
+  </div>	
+</div>
+</body>
+</html>

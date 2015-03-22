@@ -1,0 +1,280 @@
+p {
+font-family: "Times New Roman", Times, serif;
+color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+hr {
+color: black;
+}
+
+ul {
+list-style-position: inside;
+list-style-type: square;
+}
+
+table, th, td {
+border: 1px solid black;
+border-collapse: collapse;
+}
+
+th, td {
+padding-right: 2px;
+}
+
+footer {
+text-align: center;
+}
+
+.content-container {
+margin: 0 auto;
+border-radius: 10px;
+border-color: darkgray;
+background-color: darkgray;
+opacity: 0.9;
+-moz-box-shadow: 0 0 10px 1px darkgray;
+-webkit-box-shadow: 0 0 10px 1px darkgray;
+box-shadow: 0 0 10px 1px darkgray;
+width: 100%;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 2px;
+padding-bottom: 10px;
+height: 720px; 
+}
+
+.assignment2-content-container {
+margin: 0 auto;
+border-radius: 10px;
+border-color: darkgray;
+background-color: darkgray;
+opacity: 0.9;
+-moz-box-shadow: 0 0 10px 1px darkgray;
+-webkit-box-shadow: 0 0 10px 1px darkgray;
+box-shadow: 0 0 10px 1px darkgray;
+width: 100%;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 2px;
+padding-bottom: 10px; 
+}
+
+.assignment4-content-container {
+margin: 0 auto;
+border-radius: 10px;
+border-color: darkgray;
+background-color: darkgray;
+-moz-box-shadow: 0 0 10px 1px darkgray;
+-webkit-box-shadow: 0 0 10px 1px darkgray;
+box-shadow: 0 0 10px 1px darkgray;
+width: 100%;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 2px;
+padding-bottom: 10px; 
+}
+
+.content-container h4 {
+text-decoration: underline;
+}
+
+.header-container {
+text-align: center;
+border-radius: 10px;
+border-color: darkgray;
+background-color: darkgray;
+opacity: 0.9;
+-moz-box-shadow: 0 0 10px 1px darkgray;
+-webkit-box-shadow: 0 0 10px 1px darkgray;
+box-shadow: 0 0 10px 1px darkgray;
+width: 75%;
+margin: 0 auto;
+margin-bottom: 15px;
+padding-bottom: 5px;
+}
+
+#page-wrapper {
+width: 960px;
+max-width: 90%;
+margin: 0 auto;
+padding-top: 10px;
+}
+
+#assignment1body {
+background-image: url("../Images/abstractbackground.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+margin: 10px;
+}
+
+#assignment2body {
+background-image: url("../Images/floralbackground.jpg");
+background-size: cover;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+
+#assignment3body {
+background-image: url("../Images/assignment3background.jpg");
+background-size: cover;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+
+#assignment4body {
+background-image: url("../Images/assignment4background.jpg");
+background-size: cover;
+background-repeat:no-repeat;
+background-attachment:fixed;	
+}
+
+p {
+font-family: "Times New Roman", Times, serif;
+color: black;
+}
+
+h1, h2, h3, h4, h5, h6, legend, fieldset {
+font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+hr {
+color: black;
+}
+
+ul {
+list-style-position: inside;
+list-style-type: square;
+}
+
+a:hover {
+color: yellow;
+background-color: yellow;
+}
+
+a:link, a:visited, a:active {
+color: blue;
+}
+
+.contact-container {
+width: 300px;
+max-width: 90%;
+height: 200px;
+float: left;
+padding-right: 10px;
+padding-left: 15px;
+}
+
+
+
+.schedule-container {
+width: 150px;
+height: 200px;
+max-width: 90%;
+float: left;
+padding-right: 10px;
+}
+
+.class-schedule-container { 
+width: 450px;
+height: 200px;
+max-width: 90%;
+float: left;
+padding-left: 10px;
+}
+
+.class-schedule-container h3 {
+text-align: center;
+}
+
+.favorite-websites-container {
+width: 300px;
+max-width: 90%;
+height: 200px;
+float: left;
+padding-right: 10px;
+padding-left: 15px;
+margin-top: 35px;
+}
+
+.about-container {
+width: 600px;
+max-width: 100%;
+float: left;
+padding-left: 15px;
+margin-top: 35px;
+}
+
+.about-container h3 {
+text-align: center;
+}
+
+.personalinfo-container {
+height: 200px;
+width: 200px; 
+}
+
+fieldset {
+border: 1px solid gray;
+}
+
+.personalinfo-section {
+float: left;
+padding-right: 50px;
+}
+
+.educationinfo-section {
+float: left;
+padding-right: 50px;
+}
+
+.availabilityinfo-section {
+float: left;
+padding-right: 50px;
+}
+
+.checkbox-column {
+margin: 10px;
+clear: both;
+overflow: hidden;
+}
+
+.checkbox-column label {
+float: left;
+}
+
+.checkbox-column input {
+float: right;
+margin-top: 5px;
+}
+
+.checkbox-section {
+float: left;
+}
+
+.submit-section {
+padding-top: 10px;
+}
+
+.caption-text {
+color: #FFFFFF;
+}
+
+.blue-tablecolor {
+background-color: #7474E8;
+}
+
+.caption-dark {
+color: #333;
+}
+
+.hide-image {
+display: none; 
+}
+
+
+
+
