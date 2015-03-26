@@ -16,7 +16,6 @@ app.controller('homeCtrl', ['$scope','loginService', '$http', 'sessionService', 
 			$scope.totalOwnedStocks +=1;
 		}
 		else {
-			alert('slide');
 			$('#nofundsalert').slideToggle();
 		}
 	}
