@@ -1,0 +1,35 @@
+<div class="assignment4-content-container" data-ng-init="getTasks()" ng-controller="homeCtrl">
+<div class="container-fluid">
+           <div class="page-header">
+                <h1>My Tasks</h1>
+                <div class="row">
+                  <div class="col-md-1"><span class="label label-primary">{{username}}</span></div>
+                  </div>
+                </div>
+          </div>
+       <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">You have {{getTotalTodos()}} tasks to complete</h3>
+          </div>
+          <div class="panel-body">
+          <div class="row">
+            <ul class="list-group">
+              <li ng-repeat="todo in todos track by $index" class="list-group-item">
+                <input type="checkbox" ng-model="todo.done"/>
+                <span>{{todo.text}}</span>
+              </li>
+            </ul>
+          </div>
+            <div class="row">
+               <div class="input-group">
+                <input ng-model="todo.text" ng-model-instant type="text" class="form-control" placeholder="I want too...">
+                <span class="input-group-btn">
+                  <button ng-click="addToDo()" class="btn btn-primary" type="button">Add To Do</button>
+                </span>
+              </div>
+            </div>
+          </div>
+      </div>
+  <button class="clear-btn btn btn-success" ng-click="saveTodos()">Save</button>
+  <button class="clear-btn btn btn-danger" ng-click="clearCompleted()">Clear Finished Tasks</button>
+  <button ng-click="logout()" class="btn btn-info clear-btn">Logout</button>
