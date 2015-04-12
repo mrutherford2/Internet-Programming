@@ -1,35 +1,97 @@
-<div class="assignment4-content-container" data-ng-init="getTasks()" ng-controller="homeCtrl">
-<div class="container-fluid">
-           <div class="page-header">
-                <h1>My Tasks</h1>
-                <div class="row">
-                  <div class="col-md-1"><span class="label label-primary">{{username}}</span></div>
-                  </div>
+<!--Success Message-->
+<div id="savemessage" class="ui positive hidden message">
+  <i id="close" class="close icon"></i>
+  <div class="header">
+    Tasks saved successfully!
+  </div>
+</div>
+
+<div id="deletemessage" class="ui positive hidden message">
+  <i id="closeDelete" class="close icon"></i>
+  <div class="header">
+    Task(s) deleted successfully!
+  </div>
+</div>
+
+<div data-ng-init="getTasks()" ng-controller="homeCtrl" class="ui grid" style="padding-left:2%;">
+    <div class="left floated three wide column">
+      <div class="ui vertical menu" style="margin-bottom: 1080px;">
+       	<div class="header item">
+          {{username}}
+      	</div>
+        <a class="teal item">
+          Tasks
+          <div class="ui teal label">{{getTotalTodos()}}</div>
+        </a>
+        <a id="delete" ng-click="clearCompleted()" class="item">
+          Remove Finished Tasks
+          <i class="trash icon"></i>
+        </a>
+        <a ng-click="logout()" class="item">
+          Logout
+          <i class="sign out icon"></i>
+        </a>
+      <div class="item">
+        <div class="ui transparent icon input">
+          <input ng-model="searchText" type="text" placeholder="Search tasks..." autofocus>
+          <i class="search icon"></i>
+        </div>
+      </div>
+    	<div class="header item">
+          Create New Task
+      	</div>
+      	  <div class="ui cards">
+          <div class="card">
+            <div class="content">
+              <div class="header">Create New Task</div>
+              <div class="item">
+                <div class="ui transparent icon input">
+                  <input type="text" ng-model="todo.name" placeholder="Task Name">
                 </div>
-          </div>
-       <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">You have {{getTotalTodos()}} tasks to complete</h3>
-          </div>
-          <div class="panel-body">
-          <div class="row">
-            <ul class="list-group">
-              <li ng-repeat="todo in todos track by $index" class="list-group-item">
-                <input type="checkbox" ng-model="todo.done"/>
-                <span>{{todo.text}}</span>
-              </li>
-            </ul>
-          </div>
-            <div class="row">
-               <div class="input-group">
-                <input ng-model="todo.text" ng-model-instant type="text" class="form-control" placeholder="I want too...">
-                <span class="input-group-btn">
-                  <button ng-click="addToDo()" class="btn btn-primary" type="button">Add To Do</button>
-                </span>
+               <div class="ui transparent icon input">
+                  <input id="desc" ng-model="todo.text" type="text" placeholder="Task Description">
+                </div>
               </div>
             </div>
+            <button id="addToDo" type="button" ng-enter="addToDo()" ng-click="addToDo()" class="ui bottom attached submit positive button">
+              <i class="add icon"></i>
+              Add Task
+            </button>
+            </div>
+        </div>
+    </div>
+  </div>
+      <div class="three wide column" ng-repeat="todo in todos | filter:searchText">
+        <div class="ui cards">
+          <div class="card">
+            <div ng-hide="editing" class="content">
+            	<div style="display: none;">{{todo.Id}}</div>
+            	<i ng-click="editing = true" class="right floated edit icon"></i>
+                <div class="header">{{todo.name}}</div>
+                <div class="meta">Created {{todo.created | date:'MM-dd-yyyy'}}</div>
+                <div class="description min-card">
+                  <div>{{todo.text}}</div>
+                </div>
+            </div>
+            <!--For Editing-->
+           <div ng-show="editing" class="content">
+            	<div style="display: none;"></div>
+                <div class="header"><input type="text" ng-model="todo.name" placeholder="Task Name"></div>
+                <div class="description min-card">
+                  <div><input type="text" ng-model="todo.text" placeholder="Task Name"></div>
+                </div>
+                <div id="save" ng-click="saveTodos(); editing = false" class="ui submit positive button">Save</div>
+            </div>
+            <div class="extra content">
+                <div class="ui toggle checkbox">
+                  <input ng-model="todo.done" type="checkbox" id="{{todo.text}}">
+                  <label for="{{todo.text}}">Finished</label>
+                </div>
+            </div>
           </div>
+        </div>
       </div>
-  <button class="clear-btn btn btn-success" ng-click="saveTodos()">Save</button>
-  <button class="clear-btn btn btn-danger" ng-click="clearCompleted()">Clear Finished Tasks</button>
-  <button ng-click="logout()" class="btn btn-info clear-btn">Logout</button>
+
+
+
+

@@ -6,7 +6,9 @@
 	$content = $data->text;
 	$owner = $data->owner;
 	$done = $data->done;
-	$sql = "INSERT INTO tasks (Content,owner,done) VALUES (:content,:owner,:done)";
+	$name = $data->name;
+	$sql = "INSERT INTO tasks (Content,owner,done, name) VALUES (:content,:owner,:done,:name)";
 	$statement = getDBConfig()->prepare($sql);
-	$statement->execute(array(':content'=>$content, ':owner'=>$owner, ':done'=>$done));
+	$statement->execute(array(':content'=>$content, ':owner'=>$owner, ':done'=>$done, ':name'=>$name));
  ?>
+

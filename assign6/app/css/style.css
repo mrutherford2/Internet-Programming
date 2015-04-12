@@ -5,3 +5,7 @@
   font-size: 2em;
   color: #aaa;
 }
+
+.min-card {
+	min-height: 80px;
+}
