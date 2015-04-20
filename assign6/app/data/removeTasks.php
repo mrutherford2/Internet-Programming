@@ -4,20 +4,18 @@
 	error_reporting(E_ALL);
  	ini_set('display_errors', 1);
  	$data = json_decode(file_get_contents("php://input"));
- 	$owner = $data->owner;
- 	$done = $data->done; 
- 	$text = $data->text; 
+ 	$id = $data->Id;
+ 	$done = $data->done;
 
- 	$sql = "UPDATE tasks SET done =:done WHERE Content =:text AND Owner=:owner";
+ 	$sql = "UPDATE tasks SET done =:done WHERE Id =:id";
  	$statement = getDBConfig()->prepare($sql);
  	$statement->bindParam(':done', $done);
- 	$statement->bindParam(':owner', $owner);
- 	$statement->bindParam(':text', $text);
+ 	$statement->bindParam(':id', $id);
  	$statement->execute();
 
- 	$sql = "DELETE FROM tasks WHERE done = 1 AND Owner=:owner";
+ 	$sql = "DELETE FROM tasks WHERE done = 1 AND Id=:id";
  	$statement = getDBConfig()->prepare($sql);
- 	$statement->bindParam(':owner', $owner);
+ 	$statement->bindParam(':id', $id);
  	$statement->execute();
  	if($statement->rowCount() > 0)
  	{

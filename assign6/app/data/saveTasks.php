@@ -10,4 +10,4 @@
 	$sql = "UPDATE tasks SET done=:done, Content=:content, name=:name  WHERE ID=:id";
 	$statement = getDBConfig()->prepare($sql);
 	$statement->execute(array(':done'=>$done,':content'=>$text, ':name'=>$name, ':id'=>$id));
- ?> ''
+ ?> 

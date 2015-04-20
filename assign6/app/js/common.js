@@ -3,7 +3,8 @@ $(document).ready(function() {
 		$('.ui.modal').modal('show');
 	});
 	$('.checkbox').checkbox('checked');
-	$('.ui.dropdown').dropdown();
+
+	$('#menu').dropdown();
 
 	$(document).on('click', '#save', function() {
 		$('#savemessage').slideToggle();
