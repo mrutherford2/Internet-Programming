@@ -1,0 +1,66 @@
+<div class="ui center aligned grid">
+<div class="eight wide column">
+  <div class="center aligned two column row">
+    <form class="ui form">
+    <h1 class="ui dividing header">Assignment6 working with PHP and MySQL</h1>
+    <div class="two fields">
+      <div class="required field">
+        <label>Username</label>
+        <div class="ui icon input">
+          <input ng-model="user.username" type="text" placeholder="Username">
+          <i class="user icon"></i>
+        </div>
+      </div>
+      <div class="required field">
+        <label>Password</label>
+        <div class="ui icon input">
+          <input ng-model="user.password" type="password" placeholder="password">
+          <i class="lock icon"></i>
+        </div>
+      </div>
+    </div>
+    <button ng-click="login(user)" class="ui submit button positive">Login</button> 
+    <div id="register" class="ui blue submit button ">Register</div>
+    </form>
+  </div>
+  </div>
+</div>
+
+<!--Register Modal-->
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    We just need a little bit of info..
+  </div>
+  <div class="content">
+     <form class="ui form">
+    <div class="three fields">
+      <div class="required field">
+        <label>Username</label>
+        <div class="ui icon input">
+          <input ng-model="createUser.username" type="text" placeholder="Username">
+          <i class="user icon"></i>
+        </div>
+      </div>
+      <div class="required field">
+        <label>Password</label>
+        <div class="ui icon input">
+          <input ng-model="createUser.password" type="password">
+          <i class="lock icon"></i>
+        </div>
+      </div>
+       <div class="required field">
+        <label>Confirm Password</label>
+        <div class="ui icon input">
+          <input ng-model="createUser.confirmPassword" type="password">
+          <i class="lock icon"></i>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+  <div class="actions">
+    <div class="ui button">Cancel</div>
+    <div ng-click="registerUser(createUser)" class="ui positive button">Register</div>
+  </div>
+</div>
