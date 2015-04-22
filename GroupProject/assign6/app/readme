@@ -1,1 +1,8 @@
 This is the final project for Internet Programming
+
+js - Contains Controllers, Directives, and Services. Main Angular module and Common JavaScript file are included as well. 
+css - Various styles for the project
+data - All of the backend PHP code. Acts as our backend for our webservices that power the Kanban style app.
+lib - Contains core AngularJS files as well as any additional libraries
+partials - Contains partial views that are loaded using AngularJS. Login and Kanban board markup is in here.
+index.html - Acts as a page container that our AngularJS app is loaded into. 
